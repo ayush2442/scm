@@ -1,6 +1,5 @@
 console.log("Contacts.js");
-// const baseURL = "http://localhost:8081";
-const baseURL = "https://www.scm20.site";
+const baseURL = "http://localhost:8000";
 const viewContactModal = document.getElementById("view_contact_modal");
 
 const options = {
