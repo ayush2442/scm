@@ -3,6 +3,8 @@ package com.scm.entites;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -40,6 +42,7 @@ public class Contact {
 
     
     @ManyToOne
+    @JsonIgnore
     private User user;
     
     @OneToMany(mappedBy = "contact", fetch = FetchType.EAGER, orphanRemoval = true)
