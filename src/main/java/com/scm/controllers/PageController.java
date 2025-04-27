@@ -57,13 +57,13 @@ public class PageController {
     }
 
     // login
-    @GetMapping("login")
+    @GetMapping("/login")
     public String login() {
         return new String("login");
     }
 
     // register
-    @GetMapping("register")
+    @GetMapping("/register")
     public String register(Model model) {
 
         UserForm userForm = new UserForm();
@@ -90,6 +90,7 @@ public class PageController {
         //save to database
 
         //user service
+        
         // User user = User.builder()
         // .name(userForm.getName())
         // .email(userForm.getEmail())
@@ -105,11 +106,10 @@ public class PageController {
         user.setPassword(userForm.getPassword());
         user.setAbout(userForm.getAbout());
         user.setPhoneNumber(userForm.getPhoneNumber());
+        user.setEnabled(false);
         user.setProfilePic("https://robohash.org/mail@ashallendesign.co.uk");
 
 
-
-        
         User savedUser = userService.saveUser(user);
 
         System.out.println("User saved successfully");
