@@ -43,5 +43,6 @@ public class ContactForm {
     //size and resolution
     private MultipartFile contactImage;
     
-
+    private String picture;
+    
 }
