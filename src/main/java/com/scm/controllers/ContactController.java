@@ -78,10 +78,6 @@ public class ContactController {
         //process the contact picture
         //image upload 
 
-        String filename = UUID.randomUUID().toString();
-        
-        String fileURL = imageService.uploadImage(contactForm.getContactImage(), filename);
-        
         Contact contact = new Contact();
         contact.setName(contactForm.getName());
         contact.setFavorite(contactForm.isFavorite());
@@ -92,14 +88,19 @@ public class ContactController {
         contact.setUser(user);
         contact.setLinkedInLink(contactForm.getLinkedInLink());
         contact.setWebsiteLink(contactForm.getWebsiteLink());
-        contact.setPicture(fileURL);
-        contact.setCloudinaryImagePublicId(filename);
+
+        if (contactForm.getContactImage() != null && !contactForm.getContactImage().isEmpty()) {
+            String filename = UUID.randomUUID().toString();
+            String fileURL = imageService.uploadImage(contactForm.getContactImage(), filename);
+            contact.setPicture(fileURL);
+            contact.setCloudinaryImagePublicId(filename);
+        }
+        
         contactService.save(contact);
         System.out.println(contactForm);
 
 
         //set the contact pic url
-
         //set message to be displayed on view
         session.setAttribute("message", Message.builder().content("You have successfully added a new contact").type(MessageType.green).build());
                 
