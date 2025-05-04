@@ -35,4 +35,4 @@ build/
 node_modules/
 
 ### Properties ###
-.properties
+*.properties
