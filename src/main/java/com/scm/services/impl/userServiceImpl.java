@@ -31,6 +31,9 @@ public class userServiceImpl implements UserService {
     private EmailService emailService;
     
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    private Helper helper;
     
     @Override
     public User saveUser(User user) {
@@ -46,7 +49,7 @@ public class userServiceImpl implements UserService {
         String emailToken = UUID.randomUUID().toString();
         user.setEmailToken(emailToken);
         User savedUser = userRepo.save(user);
-        String emailLink = Helper.getLinkForEmailVerification(emailToken);
+        String emailLink = helper.getLinkForEmailVerification(emailToken);
         emailService.sendEmail(savedUser.getEmail(), "Verify Account : SCM", emailLink);
 
         return savedUser;

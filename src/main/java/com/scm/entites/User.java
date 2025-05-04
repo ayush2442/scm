@@ -106,49 +106,4 @@ public class User implements UserDetails {
         return this.enabled;
     }
 
-
-
-
-    // SELF DONE EXTRAS - IF PROB REMOVE
-    // public String getEmail() {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setUserId(String toString) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setRoleList(List<String> of) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setEnabled(boolean b) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setEmailVerified(boolean b) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setEmail(String toString) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setProfilePic(String toString) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setName(String toString) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void setProviderUserId(String name) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    // public void getProviderUserId(String providerUserId) {
-    //     throw new UnsupportedOperationException("Not supported yet.");
-    // }
-
-    
 }

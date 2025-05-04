@@ -1,5 +1,6 @@
 console.log("Contacts.js");
-const baseURL = "http://localhost:8000";
+//const baseURL = "http://localhost:8000";
+const baseURL = "scm1.ap-south-1.elasticbeanstalk.com";
 const viewContactModal = document.getElementById("view_contact_modal");
 
 const options = {
